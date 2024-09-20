@@ -55,3 +55,14 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);
 };
+
+// JavaScript to toggle sidenav
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.body.style.marginLeft = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.body.style.marginLeft = "0";
+  }
