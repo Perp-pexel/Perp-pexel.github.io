@@ -1,0 +1,318 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header {
+    /* background-image: url(./assets/image/img19.webp); */
+    background-color: beige;
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+#nav-items{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-right: 3%;
+}
+
+.list-items{
+    list-style-type: none;
+    float: left;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin-right: 5%;
+
+}
+.name-tag {
+    padding-left: none;
+    color: black;
+    margin-left: 2%;
+
+    
+}
+.nav-name {
+    font-size: 25px;
+}
+
+
+.input-image img {
+    width: 60%;
+    height: 40vh;
+    margin: 20%;
+    margin-right: 50%;
+    border-radius: 0%; 
+    background-color: rgba(0, 0, 0, 0.178);
+    background-position: center;
+    background-size: cover;
+}
+.input-image {
+    background-color: black;
+    width: 40%;
+    margin: 5%;
+    margin-top: 15%;
+}
+
+.input {
+    background-color: beige;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 80vh;
+   margin-bottom: 10%;
+   display: flex;
+   flex: row;
+}
+.input-text {
+    margin: 2%;
+    margin-top: 7%;
+}
+.input-text h4{
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+.input-text p {
+    margin-bottom: 40%;
+    font-weight: lighter;
+    font-style: oblique;
+}
+.input-text h1 {
+    padding-right: 10px;
+    margin-left: 90px;
+}
+.input-section {
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    flex: row;
+    margin-top: 10%;
+    
+}
+.input-section img{
+    width: 20%;
+    height: 45vh;
+    margin-right: 20%;
+    
+}
+
+.input-section-text{
+    color: white;
+    width: 70%;
+    text-align: start;
+    margin: 2%;
+    margin-left: 30%;
+    line-height: 1.6rem;
+
+}
+.input-section-text h1 a {
+    color: white;
+    text-decoration: none;
+}
+.input-section-text h1 {
+    margin-left: 7%;
+}
+.input-section-text p {
+    font-size: 15px;
+}
+.input-section-text h2 {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.input-section-text h3 {
+    text-align: center;
+}
+.input-section-text p {
+    text-align: center;
+}
+.input-section-text button {
+    background-color: beige;
+    padding: 8px;
+    padding-left: 3%;
+    padding-right: 3%;
+    align-items: center;
+    border: beige;
+    border-style: ridge;
+    margin: 4%;
+    margin-left: 40%;
+}
+.input-section-text button a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+   
+    
+
+}
+section {
+    background-color: beige;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 120%;
+}
+.image-section {
+    margin-top: 10%;
+    display: flex;
+    flex: row;
+    gap: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin: 10%;
+    width: 80%;
+
+}
+.image-section img {
+    border-radius: 50%;
+    width: 30%;
+    
+}
+.image-text {
+    width: 60%;
+    margin-top: 10%;
+
+}
+
+.image-text h1 {
+    font-size: 50px;
+}
+.image-text p{
+    font-size: 20px;
+    border-bottom-style: ridge;
+    line-height: 3rem;
+}
+
+.position {
+    display: flex;
+    width: 90%;
+    margin-top: 10%;
+    margin: 10%;
+    /* margin-left: 10%; */
+    /* line-height: 2.5rem; */
+}
+.right {
+    margin-left: 5%;
+    width: 70%;
+    margin-right: 5%;
+
+}
+.left {
+    border-right-style: ridge;
+    width: 30%;
+
+}
+
+.list {
+    line-height: 3rem;
+    list-style-type: none;
+
+}
+    
+/* .list-i {
+    list-style-type: none;
+    line-height: 3rem
+} */
+.icon {
+    padding-left: 15px;
+    font: 20px;
+    
+}
+.education {
+margin-top: 10%;
+line-height: 2rem;
+
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;  
+}
+.language {
+margin-top: 10%
+
+}
+.skills {
+margin-top: 10%;
+}
+h1 {
+    font-size: 25px;
+    margin-bottom: 3%;
+}
+h2 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 15px;
+}
+.profile p{
+    line-height: 2rem;
+}
+
+.work-experience {
+   margin-top: 5%;
+   line-height: 2rem;
+}
+.flex-cont {
+    margin-bottom: 5%;
+}
+.flex-r {
+    display: flex;
+    flex-direction: row;
+    gap: 30%;
+    text-align: start;
+    line-height: 2rem;
+}
+.list-r {
+    list-style-type: none;
+}
+/* body{
+    margin: 0%;
+    padding-left: 0%;
+} */
+footer {
+    background-image: url(./assets/image/bk1.webp);
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    width: 100%;
+    image-rendering: auto;
+    background-color: black;
+    /* margin: 0;
+    padding: 0;
+    margin-top: 0%;
+    padding-top: 0%; */
+}
+
+.f-text {
+    margin-top: 0%;
+    background-color: beige;
+    width: 30%;
+    margin-left: 35%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2rem;
+    font-style: italic;
+}
