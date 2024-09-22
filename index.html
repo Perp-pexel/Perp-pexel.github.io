@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title><link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./script.js" defer></script>
 </head>
@@ -16,22 +17,20 @@
         <span class="nav-name">PEEPS</span>
     </nav>
 
-        <!-- <nav> -->
-            <!-- <div class="name-tag">
-                <h1 class="nav-name">PEEPS</h1>
-            </div> -->
+    
         <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <ul id="nav-items">
                    <li class="list-items"><a href="#HOME">Home</a></li> 
                    <li class="list-items"><a href="#ABOUT">About</a></li>
+                   <li class="list-items"><a href="#CV">CV</a></li>
                    <li class="list-items"><a href="#EXPERIENCE">Experience</a></li>
                    <li class="list-items"><a href="#EDUCATION">Education</a></li>
                    <li class="list-items"><a href="#CONTACT">Contact</a></li>
                    <li class="list-items"><a href="#REFERENCE">Reference</a></li> 
                 </ul>
             </div>
-            <!-- </nav> -->
+    
 
     <section class="input" id="HOME">
         <div class="input-image">
@@ -42,9 +41,8 @@
         <p>BY PERPETUAL AMANKRAH</p>
         <h1>WEB DEVELOPER & FINANCIAL ANALYST</h1>
     </div>
-        
-        
     </section>
+
 </header>
 
     <section class="input-section">
@@ -57,15 +55,23 @@
         <p> A Web Developer and a Financial Analyst.</p>
         <p>For modern and functional Website and best Finanacial Solutions.</p>
         <p>We got you covered</p>
-        <button><a href="#">Hire me</a></button>
+        <div class="input-section-button">
+        <button><a href="./contact.html">Hire me</a></button>
+        <button><a href="#">Feedback</a></button>
+    </div>
     </div>
         
         <img src="./assets/image/image pp2.jpg" alt="image">
     </section>
-    
+<div>
+    <button id="Cvtoggle"><a href="javascript:void(0)"class="open-button"style="font-size:20px;cursor: pointer" onclick="openCv()">Open Cv</a></button>
+    <button class="Download"><a href="#"><i class="fa fa-download"></i> Download </a></button>
 
+</div>
 
-    <section>
+    <section id="Cv">
+        <button type="button" class="closeCv" onclick="closeCv()">Close</button>
+        
     <div class="image-section">
         <img src="./assets/image/image pp1.jpg" alt="image">
         <div class="image-text">
@@ -78,7 +84,7 @@
 
     <div class="left">
 
-    <ul class="list" id="CONTACT">
+    <ul class="list">
         <li><i class="fa fa-phone"></i><span class="icon"> 0246462281</span></li>
         <li><i class="fa fa-envelope"></i><span class="icon"> perpaman44@gmail.com</span></li>
         <li><i class="fa fa-globe"></i><span class="icon"> www.peeps.com</span></li>
@@ -196,9 +202,17 @@
 </div>
 
 </div>
-    </section>
-
+    
+<button type="button" class="closeCv" onclick="closeCv()">Close</button>
+</section>
+    
       </body>
+    
+        <div id="CONTACT" class="text-area">
+        <h1>Need our service....?</h1>
+      <button><a href="./contact.html" >Click to contact</a></button>
+    </div>
+
 <footer>
     <div class="f-text">
     <p>NOTHING IS IMPOSSIBLE</p>

@@ -58,11 +58,22 @@ window.onload = function() {
 
 // JavaScript to toggle sidenav
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.body.style.marginLeft = "250px";
+    document.getElementById("mySidenav").style.width = "130px";
+    document.body.style;
   }
 
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.body.style.marginLeft = "0";
+  }
+
+  function openCv() {
+    document.getElementById("Cv").style.width = "100%";
+    document.body.style.marginLeft = "0%"
+  }
+  
+  function closeCv() {
+    document.getElementById("Cv").style.width = "0";
+    document.body.style.marginLeft = "0";
+
   }
