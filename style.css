@@ -18,6 +18,8 @@ nav {
     width: 100%;
 }
 
+
+
 /*  */
 .sidenav {
       width: 0;
@@ -109,7 +111,7 @@ nav {
 }
 
 .input {
-    background-color:  rgb(245, 243, 220);
+    background-image: url('./assets/image/backg2.jpg');
     background-size: cover;
     background-position: center;
     margin-bottom: 10%;
@@ -187,12 +189,12 @@ nav {
     text-align: center;
 }
 .input-section-text button {
-    background-color: rgb(245, 237, 220);
+    background-color: white;
     padding: 5px;
     padding-left: 3%;
     padding-right: 3%;
     align-items: center;
-    border: rgb(245, 237, 220);
+    border: black;
     border-style: ridge;
    
 }
@@ -210,19 +212,7 @@ nav {
 }
 /*  */
 
-#Cvtoggle {
-    padding: 5px;
-    cursor: pointer;
-}
 
-section {
-    background-color:  rgb(245, 243, 220);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    /* width: 100%; */
-    height: 100%;
-}
 #Cv {
     transition: 0.5s;
     z-index: 1;
@@ -235,14 +225,20 @@ section {
     right: 0;
     position: fixed;
     height: 100%;
+    background-color:  rgb(245, 243, 220);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 #Cvtoggle {
     margin-left: 5%;
     margin-right: 3%;
+    padding: 5px;
+    cursor: pointer;
 }
 .Download {
-    background-color: red;
+    background-color: black;
     width: 15%;
     padding: 10px;
     color: white;
@@ -260,7 +256,7 @@ section {
 .open-button {
     text-decoration: none;
     color: black;
-    background-color:  rgb(245, 243, 220);
+    background-color:  white;
     margin-top: 5%;
     border-style: ridge;
     padding: 10px;
@@ -268,15 +264,6 @@ section {
     padding-left: 10px;
     padding-right: 10px;
 }
-/* .closeCv {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    line-height: 1rem;
-    height: fit-content;
-} */
-/* #Cvtoggle {
-    margin-left: 10%;
-} */
 
 .image-section {
     margin-top: 10%;
@@ -315,8 +302,7 @@ section {
     width: 90%;
     margin-top: 10%;
     margin: 10%;
-    /* margin-left: 10%; */
-    /* line-height: 2.5rem; */
+    
 }
 .right {
     margin-left: 5%;
@@ -336,10 +322,6 @@ section {
 
 }
     
-/* .list-i {
-    list-style-type: none;
-    line-height: 3rem
-} */
 .icon {
     padding-left: 15px;
     font: 20px;
@@ -393,10 +375,103 @@ h3 {
 .list-r {
     list-style-type: none;
 }
-/* body{
-    margin: 0%;
-    padding-left: 0%;
-} */
+.project{
+    width: 90%;
+    margin: 5%;
+    position: relative;  
+}
+
+.project h2 {
+    font-size:xx-large;
+    margin: 5%;
+    text-align: center;
+}
+.project p {
+    margin-bottom: 1.5%;
+}
+
+
+  /* slide galery */
+.gallery-container {
+    position: relative;
+    width: 80%;
+    margin: 40px auto;
+  }
+  
+  .gallery {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+     gap: 5%;
+    /* scroll-snap-type: x mandatory; */
+  }
+  
+  .gallery-item {
+    width: 40%;
+    height: 280px;
+    object-fit: cover;
+    scroll-snap-align: center;
+    margin-right: 10px;
+    /* overflow-x: hidden;   */
+  }
+
+  .gallery-item img {
+    width: fit-content;
+    height: 80%;
+  }
+
+  
+  .nav {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 10%;
+  }
+  
+  .prev, .next {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: white;
+  }
+  
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .gallery {
+      flex-direction: column;
+    }
+    .gallery-item {
+      width: 100%;
+      height: 300px;
+    }
+  }
+/* slide gallery end */
+.git {
+    text-align: end;
+    display: inline;
+    font-weight: bold;
+    font-size: medium;
+}
+.git button {
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+.git button a {
+    color: white;
+    text-decoration: none;
+    font-size: medium;
+    margin: 5%;
+}
+/*  */
 .fill-form {
     width: 100%;
     height: 100vh;
@@ -461,9 +536,6 @@ padding-left: 20px;
     margin: 1%;
     width: 60%;
     font-size: small;
-
-
-
 }
 .Request {
     width: 60%;
@@ -480,7 +552,35 @@ padding-left: 20px;
     width: 100%;
     margin-top: none;
 }
+.cert {
+    width: 80%;
+    height: 40%;
+    text-align: center;
+    margin-left: 10%;
+}
 
+.cert h2 {
+    font-size: xx-large;
+    margin: 5%;
+}
+.cert p{
+    text-align: start;
+    margin-bottom: 1.5%;
+}
+.certslide {
+    display: flex;
+    flex-direction: row ;
+    
+}
+.certslide a {
+    width: 50%;
+}
+
+.certslide img {
+    width: 80%;
+    height: 80%;
+    margin-left: 20%;
+}
 .contact-form button {
     width: 20%;
     height: 2.3rem;

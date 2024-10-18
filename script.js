@@ -1,4 +1,5 @@
 
+// nav toggles
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -77,3 +78,60 @@ function openNav() {
     document.body.style.marginLeft = "0";
 
   }
+
+
+  // slideshow
+const gallery = document.querySelector('.gallery');
+const galleryItems = document.querySelectorAll('.gallery-item');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+
+let currentSlide = 0;
+
+// Swipe detection
+gallery.addEventListener('touchstart', (e) => {
+  const touch = e.touches[0];
+  const startX = touch.clientX;
+  const startY = touch.clientY;
+
+  gallery.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    const endX = touch.clientX;
+    const endY = touch.clientY;
+
+    if (Math.abs(endX - startX) > Math.abs(endY - startY)) {
+      if (endX < startX) {
+        // Swipe right
+        nextSlide();
+      } else {
+        // Swipe left
+        prevSlide();
+      }
+    }
+  });
+});
+
+// Button navigation
+prevButton.addEventListener('click', prevSlide);
+nextButton.addEventListener('click', nextSlide);
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + galleryItems.length) % galleryItems.length;
+  updateSlide();
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % galleryItems.length;
+  updateSlide();
+}
+
+function updateSlide() {
+  galleryItems.forEach((item, index) => {
+    item.classList.toggle('active', index === currentSlide);
+  });
+  gallery.scrollLeft = currentSlide * galleryItemWidth();
+}
+
+function galleryItemWidth() {
+  return galleryItems[0].offsetWidth + 10;
+}
