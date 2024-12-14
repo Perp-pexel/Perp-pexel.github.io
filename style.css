@@ -593,7 +593,7 @@ padding-left: 10px;
 }
 
 .cert {
-    width: 80%;
+    width: 85%;
     height: 40%;
     text-align: center;
     margin-left: 10%;
@@ -620,8 +620,11 @@ padding-left: 10px;
     width: 80%;
     height: 80%;
     margin-left: 20%;
+    border-radius: 10px;
 }
-
+.certslide a :hover {
+    border-color: rgb(255, 0, 140);
+}
 .contact-form{
     display: flex;
     flex: row;
