@@ -7,49 +7,48 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="./script.js" defer></script>
 </head>
 
 <body>
     <header>
-        <!-- Menu Icon and fixed navbar top -->
-        <nav id="navbar">
-            <span id="menuToggle" style="font-size:30px;cursor: pointer" onclick="openNav()">&#9776; Menu</span>
-            <span class="nav-name">PEEPS</span>
-        </nav>
+        <nav>
+            
+            <div class="nav-name">PerpAman</div>
 
-
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <ul id="nav-items">
+            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+            <ul class="navbar" id="navbar">
                 <li class="list-items"><a href="#HOME">Home</a></li>
+                <li class="list-items"><a href="#PROJECTS">Projects</a></li>
                 <li class="list-items"><a href="#ABOUT">About</a></li>
-                <li class="list-items"><a href="#CV">CV</a></li>
-                <li class="list-items"><a href="#PROJECTS">Experience</a></li>
-                <li class="list-items"><a href="#CERT">Education</a></li>
+                <li class="list-items"><a href="#SERVICES">Services</a></li>
                 <li class="list-items"><a href="#CONTACT">Contact</a></li>
-                <li class="list-items"><a href="#REFERENCE">Reference</a></li>
+                <li class="list-items"><a href="#CERT">Education</a></li>
+               
+                
             </ul>
-        </div>
+
+        </nav>
 
 
         <section class="input" id="HOME">
             <div class="input-image">
-                <img src="./assets/image/image pp3.jpg" alt="image">
+                <img src="./assets/image/1W7A7863.jpg" alt="image">
             </div>
             <div class="input-text">
                 <h2> Hi...!</h2>
-                <h1><a href="" class="typewrite" data-period="2000" data-type='[ "I am Perpetual Amankrah" ]'>
-                        <span class="wrap"></span>
-                    </a></h1>
-                <p> A Web Developer and a Financial Analyst.</p>
-                <p>For modern and functional Website and best Finanacial Solutions,</p>
-                <p>I got you covered</p>
-                <div class="input-section-button" id="CV">
-                    <button><a href="./contact.html" target="_blank">Hire me</a></button>
-                    <!-- <button><a href="#">Feedback</a></button> -->
-                        <button id="Cvtoggle" ><a href="javascript:void(0)" class="open-button" style="font-size:20px;cursor: pointer"
-                                onclick="openCv()">Resume</a></button>
+                <h1>I am Perpetual Amankrah</h1>
+                <h2> A Web Developer and Financial Analyst.</h2>
+                <p class="par1">I specialize in creating visually appealing and user-friendly websites. With a strong foundation in HTML, CSS, and JavaScript, I have the skills to bring your ideas to life. </p>
+                <p class="par2">For modern and functional Website and best Finanacial Solutions, I got you covered</p>
+    
+                <div class="input-button" id="CV">
+                    <button><a href="./contact.html" target="_blank">Contact me</a></button>
+                    <button><a
+                        href="https://savefiles.org/drive/s/g59UTOYXJjKriapTS6ZUrwYkDjtwY1"  download="CV.pdf"
+                        target="_blank"><i class="fa fa-download"></i> Download CV </a></button>
+                    
                 </div>
             </div>
         </section>
@@ -227,26 +226,6 @@
 
     </section>
 
-    <section class="input-section">
-        <div class="input-section-text">
-            <div id="ABOUT">
-                <h3><a href="" class="typewrite" data-period="2000" data-type='[ "ABOUT ME" ]'><span class="wrap"></span></a></h3>
-            </div>
-            <p> I am a Backend Developer with a degree in banking and finance. My expertise lies in creating efficient, scalable, and robust backend solutions, with a primary focus on Node.js. I bring a unique blend of technical skills and financial domain knowledge, enabling me to design systems that meet complex business requirements with precision and reliability using HTML, CSS, Tailwind and JavaScript</p>
-            <p>Passionate about optimizing workflows and enhancing system performance, I thrive on solving challenging problems and delivering seamless integrations. My experience includes working on APIs, database management, and server-side logic, ensuring applications run smoothly and securely. I am committed to staying updated with the latest technologies and best practices to provide innovative solutions that align with client goals.</p>
-            <p>In addition to my technical expertise, I excel in collaborating with cross-functional teams, ensuring that backend solutions align seamlessly with frontend development and overall project objectives. My approach emphasizes clean, maintainable code and leveraging tools and frameworks to maximize efficiency. Whether building custom APIs, optimizing database queries, or implementing secure authentication systems, I am dedicated to delivering high-quality results that drive business success.</p>
-            <div class="input-section-button" id="CV">
-                <button class="feedback"><a href="./contact.html"target="_blank">Feedback</a></button>
-                
-                <button><a
-                    href="https://savefiles.org/drive/s/g59UTOYXJjKriapTS6ZUrwYkDjtwY1"  download="CV.pdf"
-                    target="_blank"><i class="fa fa-download"></i> Download CV </a></button>
-            </div>
-        </div>
-
-        <img src="./assets/image/image pp2.jpg" alt="image">
-    </section>
-
     <section class="project" id="PROJECTS">
 
         <h2>PROJECTS</h2>
@@ -305,28 +284,104 @@
 
     </section>
 
-    
+    <section id="ABOUT">
+        <div class="input-section">
+        <div class="input-section-text">
+            <h3>ABOUT ME</h3>
+            <p class="p1"> I am a Backend Developer with a degree in banking and finance. My expertise lies in creating efficient, scalable, and robust backend solutions, with a primary focus on Node.js. I bring a unique blend of technical skills and financial domain knowledge, enabling me to design systems that meet complex business requirements with precision and reliability using HTML, CSS, Tailwind and JavaScript. With a strong foundation in backend development, I have a proven track record of delivering high-quality solutions that enhance user experience and drive business success. Passionate about optimizing workflows and enhancing system performance, I thrive on solving challenging problems and delivering seamless integrations. My experience includes working on APIs, database management, and server-side logic, ensuring applications run smoothly and securely. I am committed to staying updated with the latest technologies and best practices to provide innovative solutions that align with client goals.</p>
 
-    <div id="CONTACT" class="text-area">
+            <p class="p2">In addition to my technical expertise, I excel in collaborating with cross-functional teams, ensuring that backend solutions align seamlessly with frontend development and overall project objectives. My approach emphasizes clean, maintainable code and leveraging tools and frameworks to maximize efficiency. Whether building custom APIs, optimizing database queries, or implementing secure authentication systems, I am dedicated to delivering high-quality results that drive business success.I am eager to contribute my skills and expertise to a dynamic and innovative organization, where I can leverage my expertise to drive innovation and achieve exceptional results for clients.</p>
+
+            <p class="p3">Thank you for visiting my portfolio. I look forward to the opportunity to work with you and contribute to your success.</p>
+
+            <div class="input-section-button" id="CV">
+                <button class="Read more"><a href="#">Read more</a></button>
+
+                <button id="Cvtoggle" ><a href="javascript:void(0)" class="open-button" style="font-size:20px;cursor: pointer"
+                    onclick="openCv()">Resume</a></button>
+               
+            </div>
+        </div>
+
+        <img src="./assets/image/IMG-20230402-WA0010.jpg" alt="image">
+        </div>
+    </section>
+
+    <section class="services" id="SERVICES">
+        <h2>MY SERVICES</h2>
+        <div class="services-container">
+            <div class="service">
+                <i class="fas fa-code"></i>
+                <h3>Website Development</h3>
+                <p>I create beautiful and functional websites using HTML, CSS, and JavaScript, ensuring a great user experience.</p>
+            </div>
+            
+            <div class="service">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive Web Design</h3>
+                <p>I design websites that adapt seamlessly to all devices, providing an optimal experience for all users.</p>
+            </div>
+            
+            <div class="service">
+                <i class="fas fa-server"></i>
+                <h3>Version Control & Deployment</h3>
+                <p>Using modern version control systems, I ensure smooth deployment and continuous integration of your website.</p>
+            </div>
+            
+            <div class="service">
+                <i class="fas fa-database"></i>
+                <h3>Database Management</h3>
+                <p>I design and manage secure, efficient, and scalable databases for businesses of all sizes.</p>
+            </div>
+            
+            <div class="service">
+                <i class="fas fa-tools"></i>
+                <h3>Support & Maintenance</h3>
+                <p>I offer debugging, performance optimization, and regular updates to keep your website running smoothly.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="skills" id="SKILLS">
+        <h2>MY SKILLS</h2>
+        <div class="skills-container">
+            <div class="skill"><i class="fab fa-html5"></i><p>HTML</p></div>
+            <div class="skill"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+            <div class="skill"><i class="fab fa-js"></i><p>JavaScript</p></div>
+            <div class="skill"><i class="fab fa-git-alt"></i><p>Git</p></div>
+            <div class="skill"><i class="fab fa-node-js"></i><p>Node.js</p></div>
+            <div class="skill"><i class="fas fa-server"></i><p>Express.js</p></div>
+            <div class="skill"><i class="fas fa-cube"></i><p>MongoDB</p></div>
+            <div class="skill"><i class="fas fa-database"></i><p>Postman</p></div>
+            <div class="skill"><i class="fas fa-cogs"></i><p>RESTful APIs</p></div>
+        </div>
+    </section>
+
+    
+<section class="contact" id="CONTACT">
+    <div class="text-area">
         <h1>Require Service....?</h1>
         <button><a href="./contact.html">Click to contact</a></button>
     </div>
 
-    <div class="cert" id="CERT">
-        <h2>CERTIFICATES</h2>
-        <p>Click image to view...!</p>
+</section>
 
-        <div class="certslide" onclick="opencer">
-            <a href="https://savefiles.org/drive/s/zB7qceWoFgSqW71GUZYsv7RAmX0jvy" target="_blank"><img src="./assets/image/web cert.png" alt="image"></a>
-            <a href="https://savefiles.org/drive/s/kZ7KVmJa5wKuElE9v2SuVLGGKepu3n" target="_blank"><img src="./assets/image/bay Screenshot.png" alt="image"></a>
-            <a href="https://savefiles.org/drive/s/Y8xQWbEy2CwvghdkUh5mZMNsoPCkAW" target="_blank"><img src="./assets/image/ibm badge.png" alt="image"></a>
-            <!-- <img src="./assets/image/Certificate.pdf" alt="image">
-        <img src="./assets/image/NSS Certificate.pdf" alt="image"> -->
-            <a href="https://savefiles.org/drive/s/oPkni9oPffJdoJ6uR5HtpCs4pWEqW8" target="_blank"><img src="./assets/image/livingston Screenshot .png" alt="image"></a>
-
-        </div>
+<div class="cert" id="CERT">
+    <h2>CERTIFICATES</h2>
+    <p>Click image to view...!</p>
+    <div class="certslide">
+        <img src="./assets/image/web cert.png" alt="image" onclick="openModal(this)">
+        <img src="./assets/image/bay Screenshot.png" alt="image" onclick="openModal(this)">
+        <img src="./assets/image/ibm badge.png" alt="image" onclick="openModal(this)">
+        <img src="./assets/image/livingston Screenshot .png" alt="image" onclick="openModal(this)">
     </div>
+</div>
 
+<div class="modal" id="modal">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img id="modal-img" src="" alt="">
+</div>
 
 </body>
 <footer>

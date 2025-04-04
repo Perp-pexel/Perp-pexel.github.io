@@ -1,137 +1,117 @@
 
-// nav toggles
-var TxtType = function(el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = '';
-    this.tick();
-    this.isDeleting = false;
-};
+// humburger
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.getElementById("navbar");
+    const links = document.querySelectorAll(".list-item a");
 
-TxtType.prototype.tick = function() {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
-
-    if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
+    // Toggle menu
+    function toggleMenu() {
+        navLinks.classList.toggle("active");
     }
 
-    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+    hamburger.addEventListener("click", toggleMenu);
 
-    var that = this;
-    var delta = 200 - Math.random() * 100;
+    // Close menu on link click
+    links.forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+        });
+    });
+});
 
-    if (this.isDeleting) { delta /= 2; }
+// slider
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector(".gallery");
+  let images = document.querySelectorAll(".gallery-item");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+  let index = 0;
+  const visibleImages = 3;
+  const totalImages = images.length;
 
-    if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-    }
-
-    setTimeout(function() {
-    that.tick();
-    }, delta);
-};
-
-window.onload = function() {
-    var elements = document.getElementsByClassName('typewrite');
-    for (var i=0; i<elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-type');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
-        }
-    }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-    document.body.appendChild(css);
-};
-
-// JavaScript to toggle sidenav
-function openNav() {
-    document.getElementById("mySidenav").style.width = "130px";
-    document.body.style;
+  function cloneSlides() {
+      const firstSet = [...images].slice(0, visibleImages);
+      firstSet.forEach(img => gallery.appendChild(img.cloneNode(true)));
+      images = document.querySelectorAll(".gallery-item"); // Update node list
   }
 
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.body.style.marginLeft = "0";
-  }
-
-  function openCv() {
-    document.getElementById("Cv").style.width = "100%";
-    document.body.style.marginLeft = "0%"
-  }
-  
-  function closeCv() {
-    document.getElementById("Cv").style.width = "0";
-    document.body.style.marginLeft = "0";
-
-  }
-
-
-  // slideshow
-const gallery = document.querySelector('.gallery');
-const galleryItems = document.querySelectorAll('.gallery-item');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-
-let currentSlide = 0;
-
-// Swipe detection
-gallery.addEventListener('touchstart', (e) => {
-  const touch = e.touches[0];
-  const startX = touch.clientX;
-  const startY = touch.clientY;
-
-  gallery.addEventListener('touchmove', (e) => {
-    const touch = e.touches[0];
-    const endX = touch.clientX;
-    const endY = touch.clientY;
-
-    if (Math.abs(endX - startX) > Math.abs(endY - startY)) {
-      if (endX < startX) {
-        // Swipe right
-        nextSlide();
-      } else {
-        // Swipe left
-        prevSlide();
+  function updateActiveImage() {
+      images.forEach(img => img.classList.remove("active"));
+      let centerIndex = index + Math.floor(visibleImages / 2); // Target the middle image
+      if (centerIndex < images.length) {
+          images[centerIndex].classList.add("active");
       }
-    }
+  }
+
+  function showSlide() {
+      gallery.style.transition = "transform 0.5s ease-in-out";
+      gallery.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
+      updateActiveImage();
+  }
+
+  function nextSlide() {
+      index++;
+      if (index >= totalImages) {
+          setTimeout(() => {
+              gallery.style.transition = "none";
+              index = 0;
+              showSlide();
+          }, 500);
+      }
+      showSlide();
+  }
+
+  function prevSlide() {
+      index--;
+      if (index < 0) {
+          index = totalImages - visibleImages;
+          gallery.style.transition = "none";
+          showSlide();
+      }
+      setTimeout(() => {
+          gallery.style.transition = "transform 0.5s ease-in-out";
+          showSlide();
+      }, 10);
+  }
+
+  next.addEventListener("click", nextSlide);
+  prev.addEventListener("click", prevSlide);
+  setInterval(nextSlide, 3000); // Auto slide every 3 seconds
+  cloneSlides();
+  updateActiveImage();
+});
+
+
+// About section
+document.addEventListener("DOMContentLoaded", function () {
+  const readMoreButton = document.querySelector(".input-section-button button");
+  const contentSections = document.querySelectorAll(".p2, .p3");
+  
+  // Initially hide the paragraphs
+  contentSections.forEach(section => section.style.display = "none");
+
+  readMoreButton.addEventListener("click", function () {
+      const isHidden = contentSections[0].style.display === "none";
+      
+      contentSections.forEach(section => {
+          section.style.display = isHidden ? "block" : "none";
+      });
+      
+      readMoreButton.textContent = isHidden ? "Read Less" : "Read More";
   });
 });
 
-// Button navigation
-prevButton.addEventListener('click', prevSlide);
-nextButton.addEventListener('click', nextSlide);
-
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + galleryItems.length) % galleryItems.length;
-  updateSlide();
+// cert 
+function openModal(imgElement) {
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    modal.style.display = "flex";
+    modalImg.src = imgElement.src;
+    document.body.style.overflow = 'hidden';
 }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % galleryItems.length;
-  updateSlide();
-}
-
-function updateSlide() {
-  galleryItems.forEach((item, index) => {
-    item.classList.toggle('active', index === currentSlide);
-  });
-  gallery.scrollLeft = currentSlide * galleryItemWidth();
-}
-
-function galleryItemWidth() {
-  return galleryItems[0].offsetWidth + 10;
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+    document.body.style.overflow = 'auto';
 }
