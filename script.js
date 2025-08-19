@@ -1,117 +1,160 @@
-
-// humburger
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.getElementById("navbar");
-    const links = document.querySelectorAll(".list-item a");
-
-    // Toggle menu
-    function toggleMenu() {
-        navLinks.classList.toggle("active");
-    }
-
-    hamburger.addEventListener("click", toggleMenu);
-
-    // Close menu on link click
-    links.forEach(link => {
-        link.addEventListener("click", function () {
-            navLinks.classList.remove("active");
-        });
-    });
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  alert('Thank you! Your message has been received.');
 });
 
-// slider
+
+// ===== Modal =====
 document.addEventListener("DOMContentLoaded", () => {
-  const gallery = document.querySelector(".gallery");
-  let images = document.querySelectorAll(".gallery-item");
-  const prev = document.querySelector(".prev");
-  const next = document.querySelector(".next");
+  const gallery = document.querySelector(".certslide");
+  let images = document.querySelectorAll(".certslide img");
+  const dotsContainer = document.querySelector(".dots");
+  const modal = document.getElementById("certModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalClose = document.querySelector("#certModal .close");
+
   let index = 0;
   const visibleImages = 3;
   const totalImages = images.length;
 
+  // Clone slides for infinite loop
   function cloneSlides() {
-      const firstSet = [...images].slice(0, visibleImages);
-      firstSet.forEach(img => gallery.appendChild(img.cloneNode(true)));
-      images = document.querySelectorAll(".gallery-item"); // Update node list
+    const firstSet = [...images].slice(0, visibleImages);
+    const lastSet = [...images].slice(-visibleImages);
+
+    lastSet.forEach(img => gallery.insertBefore(img.cloneNode(true), images[0]));
+    firstSet.forEach(img => gallery.appendChild(img.cloneNode(true)));
+
+    images = document.querySelectorAll(".certslide img");
+    index = visibleImages;
+    gallery.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
   }
 
-  function updateActiveImage() {
-      images.forEach(img => img.classList.remove("active"));
-      let centerIndex = index + Math.floor(visibleImages / 2); // Target the middle image
-      if (centerIndex < images.length) {
-          images[centerIndex].classList.add("active");
-      }
+  // Create dots
+  function createDots() {
+    for (let i = 0; i < totalImages; i++) {
+      const dot = document.createElement("span");
+      dot.addEventListener("click", () => {
+        index = i + visibleImages;
+        showSlide();
+      });
+      dotsContainer.appendChild(dot);
+    }
+    updateDots();
   }
 
-  function showSlide() {
-      gallery.style.transition = "transform 0.5s ease-in-out";
-      gallery.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
-      updateActiveImage();
+  function updateDots() {
+    const dots = dotsContainer.querySelectorAll("span");
+    dots.forEach(dot => dot.classList.remove("active"));
+    const realIndex = (index - visibleImages + totalImages) % totalImages;
+    if (dots[realIndex]) dots[realIndex].classList.add("active");
+  }
+
+  function showSlide(transition = true) {
+    gallery.style.transition = transition ? "transform 0.5s ease-in-out" : "none";
+    gallery.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
+    updateDots();
   }
 
   function nextSlide() {
-      index++;
-      if (index >= totalImages) {
-          setTimeout(() => {
-              gallery.style.transition = "none";
-              index = 0;
-              showSlide();
-          }, 500);
-      }
-      showSlide();
+    index++;
+    showSlide();
+    if (index >= totalImages + visibleImages) {
+      setTimeout(() => {
+        index = visibleImages;
+        showSlide(false);
+      }, 500);
+    }
   }
 
   function prevSlide() {
-      index--;
-      if (index < 0) {
-          index = totalImages - visibleImages;
-          gallery.style.transition = "none";
-          showSlide();
-      }
+    index--;
+    showSlide();
+    if (index < visibleImages) {
       setTimeout(() => {
-          gallery.style.transition = "transform 0.5s ease-in-out";
-          showSlide();
-      }, 10);
+        index = totalImages;
+        showSlide(false);
+      }, 500);
+    }
   }
 
-  next.addEventListener("click", nextSlide);
-  prev.addEventListener("click", prevSlide);
-  setInterval(nextSlide, 3000); // Auto slide every 3 seconds
-  cloneSlides();
-  updateActiveImage();
-});
-
-
-// About section
-document.addEventListener("DOMContentLoaded", function () {
-  const readMoreButton = document.querySelector(".input-section-button button");
-  const contentSections = document.querySelectorAll(".p2, .p3");
-  
-  // Initially hide the paragraphs
-  contentSections.forEach(section => section.style.display = "none");
-
-  readMoreButton.addEventListener("click", function () {
-      const isHidden = contentSections[0].style.display === "none";
-      
-      contentSections.forEach(section => {
-          section.style.display = isHidden ? "block" : "none";
-      });
-      
-      readMoreButton.textContent = isHidden ? "Read Less" : "Read More";
+  // Screen click: left = prev, right = next
+  document.querySelector(".certslide-wrapper").addEventListener("click", (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    if (e.clientX < rect.left + rect.width / 2) {
+      prevSlide();
+    } else {
+      nextSlide();
+    }
   });
+
+  // Modal
+  window.openModal = function (img) {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  };
+
+  modalClose.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+
+  // Auto slide
+  setInterval(nextSlide, 3000);
+
+  // Init
+  cloneSlides();
+  createDots();
 });
 
-// cert 
-function openModal(imgElement) {
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
-    modal.style.display = "flex";
-    modalImg.src = imgElement.src;
-    document.body.style.overflow = 'hidden';
+function updateActiveImage() {
+  images.forEach(img => img.classList.remove("active"));
+  let centerIndex = index + Math.floor(visibleImages / 2);
+  if (centerIndex < images.length) {
+    images[centerIndex].classList.add("active");
+  }
 }
 
-function closeModal() {
-    document.getElementById("modal").style.display = "none";
-    document.body.style.overflow = 'auto';
+function showSlide(transition = true) {
+  gallery.style.transition = transition ? "transform 0.5s ease-in-out" : "none";
+  gallery.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
+  updateDots();
+  updateActiveImage(); // ✅ highlight active
 }
+
+
+// Toggle About Section
+function toggleAbout() {
+  const aboutSection = document.getElementById("about-section");
+  const btn = event.target;
+
+  if (aboutSection.style.display === "none") {
+    aboutSection.style.display = "block";
+    btn.textContent = "Read Less";
+  } else {
+    aboutSection.style.display = "none";
+    btn.textContent = "Read More";
+  }
+}
+
+// About Modal
+function openAboutModal() {
+  document.getElementById("aboutModal").style.display = "block";
+}
+
+function closeAboutModal() {
+  document.getElementById("aboutModal").style.display = "none";
+}
+
+// Close modal when clicking outside
+window.onclick = function(e) {
+  var modal = document.getElementById("aboutModal");
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+

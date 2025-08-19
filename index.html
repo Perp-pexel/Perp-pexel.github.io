@@ -1,389 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="./script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perpetual Amankrah – Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
-
 <body>
-    <header>
-        <nav>
-            
-            <div class="nav-name">PerpAman</div>
 
-            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
-            <ul class="navbar" id="navbar">
-                <li class="list-items"><a href="#HOME">Home</a></li>
-                <li class="list-items"><a href="#PROJECTS">Projects</a></li>
-                <li class="list-items"><a href="#ABOUT">About</a></li>
-                <li class="list-items"><a href="#SERVICES">Services</a></li>
-                <li class="list-items"><a href="#CONTACT">Contact</a></li>
-                <li class="list-items"><a href="#CERT">Education</a></li>
-               
-                
-            </ul>
+  <header>
+    <nav class="navbar">
+      <div class="logo">PA</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#service">Service</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        
+      </div>
+    </nav>
 
-        </nav>
-
-
-        <section class="input" id="HOME">
-            <div class="input-image">
-                <img src="./assets/image/1W7A7863.jpg" alt="image">
-            </div>
-            <div class="input-text">
-                <h2> Hi...!</h2>
-                <h1>I am Perpetual Amankrah</h1>
-                <h2> A Web Developer and Financial Analyst.</h2>
-                <p class="par1">I specialize in creating visually appealing and user-friendly websites. With a strong foundation in HTML, CSS, and JavaScript, I have the skills to bring your ideas to life. </p>
-                <p class="par2">For modern and functional Website and best Finanacial Solutions, I got you covered</p>
-    
-                <div class="input-button" id="CV">
-                    <button><a href="./contact.html" target="_blank">Contact me</a></button>
-                    <button><a
-                        href="https://savefiles.org/drive/s/g59UTOYXJjKriapTS6ZUrwYkDjtwY1"  download="CV.pdf"
-                        target="_blank"><i class="fa fa-download"></i> Download CV </a></button>
-                    
-                </div>
-            </div>
-        </section>
-
-    </header>
-
-    <section id="Cv">
-        <button type="button" class="closeCv" onclick="closeCv()">Close</button>
-
-        <div class="image-section">
-            <img src="./assets/image/image pp1.jpg" alt="image">
-            <div class="image-text">
-                <h1>PERPETUAL AMANKRAH</h1>
-                <P>Web Developer/ Financial Analyst</P>
-            </div>
+    <div class="hero">
+      <div class="hero-image">
+        <img src="./assets/me.png" alt="Perpetual Amankrah">
+      </div>
+      <div class="hero-text">
+        <h1>Perpetual Amankrah</h1>
+        <p>Web Developer | Financial Analyst</p>
+        <p>Together, we can turn your ideas into powerful digital solutions. Let’s build your future now!</p>
+     
+      <div class="buttons">
+          <a href="https://github.com/Perp-pexel" class="btn" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+          <a href="https://www.linkedin.com/in/perpetual-amankrah-43621b251/" class="btn-secondary" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
         </div>
-
-        <div class="position">
-
-            <div class="left">
-
-                <ul class="list">
-                    <li><i class="fa fa-phone"></i><span class="icon"> 0246462281</span></li>
-                    <li><i class="fa fa-envelope"></i><span class="icon"> perpaman44@gmail.com</span></li>
-                    <li><i class="fa fa-globe"></i><span class="icon"> www.peeps.com</span></li>
-                    <li><i class="fa fa-map-marker"></i><span class="icon"> B140 Nii Amane Akwei Street, Accra</span>
-                    </li>
-                </ul>
-
-                <div class="education" id="EDUCATION">
-                    <h1>EDUCATION</h1>
-
-                    <div class="flex">
-                        <h2>BACHELORS</h2>
-                        <h3>Banking and Finance</h3>
-                        <h3>Central University</h3>
-                        <p>2014-2018</p>
-                    </div>
-
-                    <div class="flex">
-                        <h2>CERTIFICATE PROGRAM</h2>
-                        <h3>Web Development</h3>
-                        <h3>Mest-Generations Ghana</h3>
-                        <p>2024</p>
-                    </div>
-
-                    <div>
-                        <h2>SOFT SKILLS</h2>
-                        <div>
-                            <h3>IBM SkillsBuild</h3>
-                            <p>Web Development Fundamentals</p>
-                        </div>
-                        <div>
-                            <h3>Moreton Bay Regional Council</h3>
-                            <p>Entrepreneurship & Innovation</p>
-                        </div>
-
-                        <div>
-                            <h3>Livingston School of leadership</h3>
-                            <p>Transformational Leadership</p>
-                        </div>
-
-                        <div>
-                            <h3>MON- TRAN </h3>
-                            <p>Customer Service</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="skills">
-                    <h1>EXPERTISE</h1>
-                    <ul class="list">
-                        <li>Web design</li>
-                        <li>Coding</li>
-                        <li>Customer service</li>
-                        <li>Management</li>
-                        <li>Critical Thinking</li>
-                        <li>Negotiation</li>
-                    </ul>
-                </div>
-
-                <div class="language">
-                    <h1>LANGUAGE</h1>
-                    <ul class="list">
-                        <li>English</li>
-                        <li>Fante</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="right">
-
-                <div class="profile">
-                    <h1>PROFILE</h1>
-                    <p>I am a highly motivated, hardworking and reliable individual with intellectual ability which
-                        enables me to
-                        learn faster to enhance productivity. I am able to work independently with or without pressure
-                        as well as
-                        undertake additional task as assigned with low supervision. I always make sure work is done
-                        effectively and
-                        delivered on time.</p>
-                </div>
-                <div class="work-experience" id="EXPERIENCE">
-                    <h1>WORK EXPERIENCE</h1>
-                    <div class="flex-cont">
-                        <h2>Web Development, Mest-Generations Ghana</h2>
-                        <p>September 2024 - Till date</p>
-                        <ul>
-                            <li>Web Design</li>
-                            <li>Frontend</li>
-                            <li>Backend</li>
-                        </ul>
-
-                    </div>
-                    <div class="flex-cont">
-                        <h2>Administrative Manager, Mayton Pharmacy</h2>
-                        <p>April 2021 - Till date</p>
-                        <ul>
-                            <li>Making payment to suppliers</li>
-                            <li>Managing accounts of the Pharmacy</li>
-                            <li>Managing Stock</li>
-                            <li>Performing Human Resource duties</li>
-                        </ul>
-
-                    </div>
-                    <div class="flex-cont">
-                        <h2>Customer Service, Multichoice Ghana</h2>
-                        <p>June 2022 - December 2024</p>
-                        <ul>
-                            <li>Assisting Customers</li>
-                            <li>Selling company product and services through wireless connections</li>
-                            <li>Uploading customer details</li>
-                        </ul>
-
-                    </div>
-                    <div class="flex-cont">
-                        <h2>Mobile Registration Workstation Operator (MRWO), National Identification Authority</h2>
-                        <p>October 2019 - September 2020</p>
-                        <ul>
-                            <li>Data collection and capturing applicants' information onto the workstation</li>
-                            <li>Assembling and disassembling Workstation</li>
-                            <li>Issuing receipt</li>
-                        </ul>
-                    </div>
-
-                    <div class="flex-cont">
-                        <h2>National Service Personnel, Micro Enterprise Department GN Bank</h2>
-                        <p>August 2018 - July 2019</p>
-                        <ul>
-                            <li>Monitoring performance of mobile bankers across the nation</li>
-                            <li>Monitoring the use of POS devices by mobile bankers</li>
-                            <li>Resolving issues concerning the use of the POS device</li>
-                            <li>Ensure payment of network providers</li>
-                            <li>Assisted Chief operations Officer (COO) in the absence of his assistant</li>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-                <div class="reference" id="REFERENCE">
-                    <h2>REFERENCE</h2>
-                    <p>Available upon request </p>
-                </div>
-
-
-            </div>
-        </div>
-
-        </div>
-
-        <button type="button" class="closeCv" onclick="closeCv()">Close</button>
-
-    </section>
-
-    <section class="project" id="PROJECTS">
-
-        <h2>PROJECTS</h2>
-        <p>Click image to view...!</p>
-
-        <div class="gallery-container">
-            <div class="gallery">
-                <div class="gallery-item">
-                    <a href="https://perp-pexel.github.io/Real-Estate-Landing-Website/" target="_blank"><img
-                            src="./assets/image/Screenshot 2024-10-16 223136.png" alt="_blank"></a>
-                </div>
-    
-                <div class="gallery-item">
-                    <a href="https://perp-pexel.github.io/portfolio/" target="_blank"><img
-                            src="./assets/image/Screenshot 2024-10-16 223248.png" alt="_blank"></a>
-                </div>
-    
-                <div class="gallery-item">
-                    <a href="https://perp-pexel.github.io/recipe/" target="_blank"> <img
-                            src="./assets/image/Screenshot 2024-10-16 223446.png" alt="_blank"></a>
-                </div>
-    
-                <div class="gallery-item">
-                    <a href="https://perp-pexel.github.io/Finance-Webpage/" target="_blank"> <img
-                            src="./assets/image/Screenshot 2024-10-16 224512.png" alt="_blank"></a>
-                </div>
-    
-                <div class="gallery-item">
-                    <a href="https://perp-pexel.github.io/Real-Estate-Landing-Website/" target="_blank"><img
-                            src="./assets/image/Screenshot apis.png" alt="_blank"></a>
-                </div>
-    
-                <div class="gallery-item">
-                    <a href="https://perp-pexel.github.io/portfolio/" target="_blank"><img
-                            src="./assets/image/Screenshot apis.png" alt="_blank"></a>
-                </div>
-    
-                <div class="gallery-item" >
-                    <a href="https://perp-pexel.github.io/recipe/" target="_blank"> <img
-                            src="./assets/image/Screenshot apis.png" alt="_blank"></a>
-                </div>
-    
-                <div class="gallery-item">
-                    <a href="https://perp-pexel.github.io/Finance-Webpage/" target="_blank"> <img
-                            src="./assets/image/Screenshot apis.png" alt="_blank"></a>
-                </div>
-            </div>
-            <div class="nav">
-              <button class="prev"><i class="fa fa-arrow-circle-left"></i></button>
-              <button class="next"><i class="fa fa-arrow-circle-right"></i></button>
-            </div>
-          </div>
-          <div class="git">
-            <p>For more projects visit <button><i class="fa fa-github" style="font-size:24px"><a href="https://github.com/Perp-pexel" target="_blank">GitHub</a></i></button></p>
-          </div>
-
-    </section>
-
-    <section id="ABOUT">
-        <div class="input-section">
-        <div class="input-section-text">
-            <h3>ABOUT ME</h3>
-            <p class="p1"> I am a Backend Developer with a degree in banking and finance. My expertise lies in creating efficient, scalable, and robust backend solutions, with a primary focus on Node.js. I bring a unique blend of technical skills and financial domain knowledge, enabling me to design systems that meet complex business requirements with precision and reliability using HTML, CSS, Tailwind and JavaScript. With a strong foundation in backend development, I have a proven track record of delivering high-quality solutions that enhance user experience and drive business success. Passionate about optimizing workflows and enhancing system performance, I thrive on solving challenging problems and delivering seamless integrations. My experience includes working on APIs, database management, and server-side logic, ensuring applications run smoothly and securely. I am committed to staying updated with the latest technologies and best practices to provide innovative solutions that align with client goals.</p>
-
-            <p class="p2">In addition to my technical expertise, I excel in collaborating with cross-functional teams, ensuring that backend solutions align seamlessly with frontend development and overall project objectives. My approach emphasizes clean, maintainable code and leveraging tools and frameworks to maximize efficiency. Whether building custom APIs, optimizing database queries, or implementing secure authentication systems, I am dedicated to delivering high-quality results that drive business success.I am eager to contribute my skills and expertise to a dynamic and innovative organization, where I can leverage my expertise to drive innovation and achieve exceptional results for clients.</p>
-
-            <p class="p3">Thank you for visiting my portfolio. I look forward to the opportunity to work with you and contribute to your success.</p>
-
-            <div class="input-section-button" id="CV">
-                <button class="Read more"><a href="#">Read more</a></button>
-
-                <button id="Cvtoggle" ><a href="javascript:void(0)" class="open-button" style="font-size:20px;cursor: pointer"
-                    onclick="openCv()">Resume</a></button>
-               
-            </div>
-        </div>
-
-        <img src="./assets/image/IMG-20230402-WA0010.jpg" alt="image">
-        </div>
-    </section>
-
-    <section class="services" id="SERVICES">
-        <h2>MY SERVICES</h2>
-        <div class="services-container">
-            <div class="service">
-                <i class="fas fa-code"></i>
-                <h3>Website Development</h3>
-                <p>I create beautiful and functional websites using HTML, CSS, and JavaScript, ensuring a great user experience.</p>
-            </div>
-            
-            <div class="service">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Responsive Web Design</h3>
-                <p>I design websites that adapt seamlessly to all devices, providing an optimal experience for all users.</p>
-            </div>
-            
-            <div class="service">
-                <i class="fas fa-server"></i>
-                <h3>Version Control & Deployment</h3>
-                <p>Using modern version control systems, I ensure smooth deployment and continuous integration of your website.</p>
-            </div>
-            
-            <div class="service">
-                <i class="fas fa-database"></i>
-                <h3>Database Management</h3>
-                <p>I design and manage secure, efficient, and scalable databases for businesses of all sizes.</p>
-            </div>
-            
-            <div class="service">
-                <i class="fas fa-tools"></i>
-                <h3>Support & Maintenance</h3>
-                <p>I offer debugging, performance optimization, and regular updates to keep your website running smoothly.</p>
-            </div>
-        </div>
-    </section>
-    
-    
-    <section class="skills" id="SKILLS">
-        <h2>MY SKILLS</h2>
-        <div class="skills-container">
-            <div class="skill"><i class="fab fa-html5"></i><p>HTML</p></div>
-            <div class="skill"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
-            <div class="skill"><i class="fab fa-js"></i><p>JavaScript</p></div>
-            <div class="skill"><i class="fab fa-git-alt"></i><p>Git</p></div>
-            <div class="skill"><i class="fab fa-node-js"></i><p>Node.js</p></div>
-            <div class="skill"><i class="fas fa-server"></i><p>Express.js</p></div>
-            <div class="skill"><i class="fas fa-cube"></i><p>MongoDB</p></div>
-            <div class="skill"><i class="fas fa-database"></i><p>Postman</p></div>
-            <div class="skill"><i class="fas fa-cogs"></i><p>RESTful APIs</p></div>
-        </div>
-    </section>
-
-    
-<section class="contact" id="CONTACT">
-    <div class="text-area">
-        <h1>Require Service....?</h1>
-        <button><a href="./contact.html">Click to contact</a></button>
+      </div>
     </div>
+  </header>
+
+   <section class="services" id="service">
+  <h2>MY SERVICES</h2>
+  <div class="services-container">
+    
+    <div class="service">
+      <i class="fas fa-code"></i>
+      <h3>Website Development</h3>
+      <p>I create beautiful and functional websites using HTML, CSS, JavaScript and React, ensuring a great user experience.</p>
+    </div>
+
+    <div class="service">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Responsive Web Design</h3>
+      <p>I design websites that adapt seamlessly to all devices, providing an optimal experience for all users.</p>
+    </div>
+
+    <div class="service">
+      <i class="fas fa-cogs"></i>
+      <h3>Restful APIs</h3>
+      <p>I design and develop RESTful APIs that enable seamless communication between your web applications and backend services.</p>
+    </div>
+
+    <div class="service">
+      <i class="fas fa-server"></i>
+      <h3>Version Control & Deployment</h3>
+      <p>Using modern version control systems, I ensure smooth deployment and continuous integration of your website.</p>
+    </div>
+
+    <div class="service">
+      <i class="fas fa-database"></i>
+      <h3>Database Management</h3>
+      <p>I design and manage secure, efficient, and scalable databases for businesses of all sizes.</p>
+    </div>
+
+    <div class="service">
+      <i class="fas fa-tools"></i>
+      <h3>Support & Maintenance</h3>
+      <p>I offer debugging, performance optimization, and regular updates to keep your website running smoothly.</p>
+    </div>
+    
+  </div>
+</section>
+
+
+  <section id="about">
+  <h2>About Me</h2>
+  
+
+<div class="academic">
+  <div class="academic-flex">
+    <div class="academic-left">
+      <p>
+        I'm Perpetual Amankrah, a Junior Web Developer with a background in Banking and Finance.
+        Passionate about solving real-world problems through clean and scalable digital solutions. 
+        Currently seeking opportunities to apply my skills and contribute to innovative projects. 
+      </p>
+      <!-- Buttons -->
+<div>
+  <button onclick="openAboutModal()">Read More</button>
+  <button><a href="https://us.docworkspace.com/d/sIOW8gs5Gwv-OxQY?sa=601.1037" target="_blank">Download CV</a></button>
+</div>
+
+<!-- About Modal Overlay -->
+<div id="aboutModal" class="about-modal">
+  <div class="about-modal-content">
+    <span class="about-close" onclick="closeAboutModal()">&times;</span>
+
+    <div class="about-flex">
+      <!-- Left Side: Image -->
+      <img src="./assets/me5.png" alt="Profile">
+
+      <!-- Right Side: Text -->
+      <div class="about-text">
+        <h2>ABOUT ME</h2>
+        <p>
+          I am a Web Developer with a background in Banking and Finance, bringing together technical expertise and business insight to create secure, efficient, and scalable systems. My strength lies in Node.js and Express.js, where I design and implement APIs, manage databases, and build server-side logic to ensure smooth application performance.
+          <br><br>
+          Alongside backend development, I have strong skills in building frontend applications with HTML, CSS, Tailwind, JavaScript, and React, allowing me to deliver complete, user-friendly solutions that align with business needs.
+          <br><br>
+          I am passionate about solving complex problems, optimizing workflows, and building reliable systems that enhance user experience. I thrive in collaborative environments, write clean and maintainable code, and continuously look for ways to leverage technology to drive innovation. With my blend of technical skills and financial acumen, I aim to deliver solutions that are not only scalable and secure but also support real business growth.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+    <div class="academic-right">
+        <h3>Academic Background</h3>
+      <div class="academic-item">
+        <strong>BSc in Banking and Finance</strong><br>
+        Central University, Accra<br>
+        <em>2014 – 2018</em>
+      </div>
+      <div class="academic-item">
+        <strong>Web Development Program</strong><br>
+        Generation Ghana (GROW Cohort 3)<br>
+        <em>Sept – Nov 2024</em>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Critical Thinking</li>
+        <li>Teamwork & Collaboration</li>
+        <li>Leadership & Organization</li>
+        <li>Communication & Client Engagement</li>
+        <li>Confidentiality & Pressure Management</li>
+      </ul>
+    </div>
+
+    <div class="about-card">
+      <h3>Certifications</h3>
+      <ul>
+        <li>WordPress – TestDome (Top 25%), June 2025</li>
+        <li>IBM SkillsBuild – Web Development Fundamentals</li>
+        <li>Entrepreneurship – Moreton Bay Council</li>
+        <li>Leadership – Livingston School of Leadership</li>
+        <li>Customer Service – MON-TRAN</li>
+      </ul>
+    </div>
+
+    <div class="about-card">
+      <h3>Work Experience</h3>
+      <ul>
+        <li><strong>Freelance</strong> – Junior Web Developer (2024–Present)</li>
+        <li><strong>Mayton Pharmacy</strong> – Administrative Manager (2021–2024)</li>
+        <li><strong>Multichoice Ghana</strong> – Customer Service Rep (2022–2023)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects-wrapper">
+
+    <div class="project-card">
+      <a href="https://castorcareghana.netlify.app/" target="_blank" rel="noopener noreferrer"><img src="assets/castorcare.png" alt="Castor Care Ghana" />
+      <div class="project-text">
+        <h3>Castor Care Ghana (ABSA YAW)</h3>
+        <p>React-based platform with Payaza integration for education and product payments.</p>
+      </div></a>
+    </div>
+
+    <div class="project-card">
+      <a href="https://abbanbamboohaven.netlify.app/" target="_blank" rel="noopener noreferrer"><img src="assets/abbanbamboo.png" alt="Abban Bamboo Haven" />
+      <div class="project-text">
+        <h3>Abban Bamboo Haven (YAI)</h3>
+        <p>Full-stack e-commerce platform promoting sustainable bamboo products.</p>
+      </div></a>
+    </div>
+
+    <div class="project-card">
+      <a href="https://github.com/mestafrica/DigiCurriculum" target="_blank" rel="noopener noreferrer"><img src="assets/ges.jpg" alt="GES Curriculum Platform" />
+      <div class="project-text">
+        <h3>GES Curriculum Platform</h3>
+        <p>Open-source education platform for Ghana Education Service curriculum.</p>
+      </div></a>
+    </div>
+
+    <div class="project-card">
+      <a href="https://perp-pexel.github.io/Real-Estate-Landing-Website/" target="_blank" rel="noopener noreferrer"><img src="assets/realestate.png" alt="Real Estate Landing Page" />
+      <div class="project-text">
+        <h3>Real Estate Landing Page</h3>
+        <p>Responsive landing page using basic HTML, CSS, and JS for property listings.</p>
+      </div>
+    </div></a>
+  </div>
+
+  <div class="buttons">
+    <a href="https://github.com/Perp-pexel" class="btn" target="_blank">View All on  <i class="fab fa-github"></i> GitHub</a>
+  </div>
+
+  <div class="project-tech">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><i class="fab fa-html5"></i> HTML5</li>
+      <li><i class="fab fa-css3-alt"></i> CSS3</li>
+      <li><i class="fab fa-js"></i> JavaScript</li>
+      <li><i class="fab fa-react"></i> React</li>
+      <li><i class="fab fa-node-js"></i> Node.js</li>
+      <li><i class="fas fa-server"></i> Express</li>
+      <li><i class="fas fa-database"></i> MongoDB</li>
+      <li><i class="fas fa-plug"></i> REST APIs</li>
+    </ul>
+  </div>
 
 </section>
 
-<div class="cert" id="CERT">
-    <h2>CERTIFICATES</h2>
-    <p>Click image to view...!</p>
+<section class="cert" id="CERT">
+  <h2>CERTIFICATES</h2>
+  <p>Click image to view...!</p>
+  <div class="certslide-wrapper">
     <div class="certslide">
-        <img src="./assets/image/web cert.png" alt="image" onclick="openModal(this)">
-        <img src="./assets/image/bay Screenshot.png" alt="image" onclick="openModal(this)">
-        <img src="./assets/image/ibm badge.png" alt="image" onclick="openModal(this)">
-        <img src="./assets/image/livingston Screenshot .png" alt="image" onclick="openModal(this)">
+      <img src="./assets/web cert.png" alt="image" onclick="openModal(this)">
+      <img src="./assets/bay Screenshot.png" alt="image" onclick="openModal(this)">
+      <img src="./assets/ibm badge.png" alt="image" onclick="openModal(this)">
+      <img src="./assets/livingston Screenshot .png" alt="image" onclick="openModal(this)">
+      <img src="./assets/wordpress.png" alt="image" onclick="openModal(this)">
+      <img src="./assets/cognifyz.png" alt="image" onclick="openModal(this)">
+      <img src="./assets/digitalregenesys.png" alt="image" onclick="openModal(this)">
+      <img src="./assets/montran.jpg" alt="image" onclick="openModal(this)">
     </div>
+  </div>
+  <div class="dots"></div>
+</section>
+
+<div id="certModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
 </div>
 
-<div class="modal" id="modal">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-    <img id="modal-img" src="" alt="">
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+<div class="contact-icons">
+  <a href="tel:0246462281" target="_blank" title="Phone">
+    <i class="fas fa-phone"></i>
+  </a>
+  <a href="mailto:perpaman44@gmail.com" target="_blank" title="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://wa.me/0570695824" target="_blank" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://x.com/perpetuala54325?t=JrSkoZduucLZxPmYUxc8QQ&s=09" target="_blank" title="Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.instagram.com/pherp/profilecard/?igsh=MTk2eGY2NDJtaHFndQ==" target="_blank" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/perpetual-amankrah-43621b251/" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://github.com/Perp-pexel" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
 </div>
 
-</body>
+
+  </section>
+
 <footer>
     <div class="f-text">
         <p>NOTHING IS IMPOSSIBLE</p>
@@ -391,4 +307,12 @@
     </div>
 </footer>
 
+ <div class="foot">
+    <p>&copy; 2025 Perpetual Amankrah</p>
+  </div>
+
+  
+
+  <script src="script.js"></script>
+</body>
 </html>
