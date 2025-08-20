@@ -815,7 +815,7 @@ footer {
   }
 
   .hero-text h1 {
-    font-size: 2rem;   /* fixed invalid "rem" */
+    font-size: 1.9rem;   /* fixed invalid "rem" */
   }
 
   .hero-text p {
@@ -873,14 +873,42 @@ footer {
   }
 }
 
+
+
 @media (max-width: 480px) {
   /* Hero text smaller */
+  .hero {
+    flex-direction: row; /* stack image above text */
+    align-items: center;
+    padding-top: 50px;
+    margin-left: -20px;
+  }
+  .hero-text {
+    max-width: 100%;
+    padding: 10px 0;
+  }
   .hero-text h1 {
-    font-size: 1.8rem;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
   }
 
   .hero-text p {
-    font-size: 0.95rem;
+    font-size: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .btn,
+  .btn-secondary {
+    font-size: small;
+    padding: 5px 6px;
+    text-align: center;
   }
 
   /* Service card smaller padding */
@@ -888,10 +916,29 @@ footer {
     padding: 15px;
   }
 
-  /* Certificates */
+   .project-tech ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-tech li {
+    padding: 5px 10px;
+  }
+
+   /* Certificates */
+   .certslide-wrapper {
+    margin-left: 10px;
+  }
   .certslide img {
-    width: 200px;
+    width: 130px;
     height: 200px;
+  }
+  
+  .contact-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
   }
 
   /* Footer text */
@@ -902,3 +949,5 @@ footer {
     font-size: 16px;
   }
 }
+
+
