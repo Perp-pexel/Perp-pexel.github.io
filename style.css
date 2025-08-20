@@ -900,7 +900,7 @@ footer {
   }
 
   .hero-image img {
-    min-width: 180px;
+    min-width: 185.5px;
     padding: 0;
   }
 
@@ -909,6 +909,7 @@ footer {
     font-size: small;
     padding: 5px 6px;
     text-align: center;
+    margin: 0 auto;
   }
 
   /* Service card smaller padding */
