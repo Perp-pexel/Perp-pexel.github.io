@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px 20px;
   background-color: #1a237e;
   position: fixed;
   width: 100%;
@@ -34,6 +34,8 @@ body {
   gap: 20px;
   margin-right: 50px;
   font-size: 18px;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-links a {
@@ -42,6 +44,79 @@ body {
   text-decoration: none;
   font-weight: bold;
 }
+.nav-links a:hover {
+  color: #ffca28;
+  text-decoration: none;
+}
+
+/* Default (desktop) */
+.nav-links {
+  display: flex;
+}
+
+/* Hamburger hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-right: 50px;
+  margin-left: auto;
+  margin-top: -40px;
+  z-index: 2000; /* Ensure it appears above other elements */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Hamburger default */
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* X animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /* middle bar disappears */
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px; /* below navbar */
+    right: 20px;
+    background: #1a237e;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: none; /* hidden by default */
+    z-index: 2000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
 
 /* Hero */
 .hero {
@@ -91,14 +166,14 @@ body {
 /* Sections */
 section {
   padding: 40px 20px;
-  margin: 20px auto;
-  max-width: 1200px;
+  margin: 30px auto;
+  max-width: 1000px;
 }
 
 section h2 {
   text-align: center;
   color: #1a237e;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 /* .services {
@@ -254,9 +329,16 @@ section h2 {
 /* Responsive */
 @media (max-width: 768px) {
   .about-flex {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
   }
-  .about-flex img,
+  .about-flex img {
+    width: 35%;
+    border-right: 1px solid #eee;
+    max-height: 300px;
+    border-bottom: 1px solid #eee;
+  }
   .about-text {
     width: 100%;
     max-height: 250px;
@@ -397,9 +479,6 @@ section h2 {
 }
 
 .project-tech ul {
-  /* display: flex;
-  flex-wrap: wrap; */
-  /* gap: 15px; */
   list-style: none;
   display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -407,7 +486,8 @@ section h2 {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     justify-items: center;
-  
+    align-items: center;
+    padding: 0;
 }
 
 .project-tech li {
@@ -482,7 +562,7 @@ section h2 {
   text-align: center;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  margin: 50px;
+  /* margin: 50px; */
 }
 
 .cert h2 {
@@ -526,15 +606,23 @@ section h2 {
   background: #fff;
   cursor: pointer;
   transform: scale(1); /* zoomed out by default */
-  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+  transition: transform 0.4s ease;
+  opacity: 0.5s ease;
 }
 
 /* Zoom back to normal when active (JS will add .active) */
-.certslide img.active {
+/* .certslide img.active {
   transform: scale(0.9);
   border: 10px solid #0077ff;
   box-shadow: 0 50px 20px rgba(0, 119, 255, 0.3);
   
+} */
+
+.certslide img.active {
+  transform: scale(1.1);
+  opacity: 1;
+  border: 3px solid #007BFF;
+  border-radius: 10px;
 }
 
 .certslide img:hover {
@@ -558,11 +646,12 @@ section h2 {
   background: #ccc;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s ease;
 }
 
 .dots .active {
   background: #0077ff;
+  transform: scale(1.2);
 }
 
 
@@ -684,18 +773,132 @@ footer {
   padding: 5px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+
+/* MediaQueries */
+@media (max-width: 1024px) {
+  /* Navbar */
+  /* .nav-links {
+    gap: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+  } */
+
+  /* Hero section */
   .hero {
-    flex-direction: column;
-    text-align: center;
+    display: flex;
+    flex-direction: row;   /* image left, text right */
+    align-items: center;   /* vertically center */
+    justify-content: space-between;
+    margin-top: 15%;
+    padding: 20px;
   }
 
+  .hero-image {
+    flex: 1;   /* take half width */
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 80%;   /* adjust size */
+    height: auto;
+    max-width: 400px;
+    border-radius: 10px;
+  }
+
+  .hero-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;   /* align text properly */
+    margin-top: 0;
+    padding: 10px 0 ;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;   /* fixed invalid "rem" */
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Navbar stack */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 25px;
+  }
+
+  .service {
+    width: 80%;
+  }
+
+  /* Academic section stack */
   .academic-flex {
     flex-direction: column;
+    /* gap: 10px; */
   }
 
-  .about-grid {
+  /* Projects layout → 1 per row */
+  .projects-wrapper {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+
+  /* Project tech list → 2 columns */
+  .project-tech ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+
+  /* Certificates → smaller slides */
+  .certslide img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero text smaller */
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  /* Service card smaller padding */
+  .service {
+    padding: 15px;
+  }
+
+  /* Certificates */
+  .certslide img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Footer text */
+  .f-text {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
   }
 }

@@ -4,7 +4,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 });
 
 
-// ===== Modal =====
+
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.querySelector(".certslide");
   let images = document.querySelectorAll(".certslide img");
@@ -14,11 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalClose = document.querySelector("#certModal .close");
 
   let index = 0;
-  const visibleImages = 3;
-  const totalImages = images.length;
+  let visibleImages = getVisibleImages();
+  let totalImages = images.length;
+
+  function getVisibleImages() {
+    return window.innerWidth <= 768 ? 2 : 3;
+  }
 
   // Clone slides for infinite loop
+
   function cloneSlides() {
+    visibleImages = getVisibleImages();   
+    totalImages = images.length;
+
     const firstSet = [...images].slice(0, visibleImages);
     const lastSet = [...images].slice(-visibleImages);
 
@@ -32,10 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Create dots
   function createDots() {
+    dotsContainer.innerHTML = "";
     for (let i = 0; i < totalImages; i++) {
       const dot = document.createElement("span");
       dot.addEventListener("click", () => {
-        index = i + visibleImages;
+        index = i + visibleImages; // jump to that slide
         showSlide();
       });
       dotsContainer.appendChild(dot);
@@ -46,15 +55,32 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateDots() {
     const dots = dotsContainer.querySelectorAll("span");
     dots.forEach(dot => dot.classList.remove("active"));
-    const realIndex = (index - visibleImages + totalImages) % totalImages;
+
+    // ✅ center image determines active dot
+    const realIndex =
+      (index - visibleImages + Math.floor(visibleImages / 2) + totalImages) %
+      totalImages;
+
     if (dots[realIndex]) dots[realIndex].classList.add("active");
   }
 
-  function showSlide(transition = true) {
-    gallery.style.transition = transition ? "transform 0.5s ease-in-out" : "none";
-    gallery.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
-    updateDots();
+  function updateActiveImage() {
+  images.forEach(img => img.classList.remove("active"));
+
+  // ✅ highlight center image depending on visibleImages
+  let centerIndex = index + Math.floor(visibleImages / 2);
+  if (images[centerIndex]) {
+    images[centerIndex].classList.add("active");
   }
+}
+
+ function showSlide(transition = true) {
+  const slideWidth = 100 / visibleImages; // % width per slide
+  gallery.style.transition = transition ? "transform 0.5s ease-in-out" : "none";
+  gallery.style.transform = `translateX(-${index * slideWidth}%)`;
+  updateDots();
+  updateActiveImage();
+}
 
   function nextSlide() {
     index++;
@@ -108,22 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Init
   cloneSlides();
   createDots();
+  showSlide(false);
 });
-
-function updateActiveImage() {
-  images.forEach(img => img.classList.remove("active"));
-  let centerIndex = index + Math.floor(visibleImages / 2);
-  if (centerIndex < images.length) {
-    images[centerIndex].classList.add("active");
-  }
-}
-
-function showSlide(transition = true) {
-  gallery.style.transition = transition ? "transform 0.5s ease-in-out" : "none";
-  gallery.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
-  updateDots();
-  updateActiveImage(); // ✅ highlight active
-}
 
 
 // Toggle About Section
