@@ -3,6 +3,33 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   alert('Thank you! Your message has been received.');
 });
 
+// hamburger
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+// Toggle dropdown + X animation
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+  hamburger.classList.toggle("active"); // add/remove X class
+});
+
+// Close menu when link is clicked
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+    hamburger.classList.remove("active"); // reset X
+  });
+});
+
+// Close when clicking outside
+document.addEventListener("click", (e) => {
+  if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+    navLinks.classList.remove("show");
+    hamburger.classList.remove("active"); // reset X
+  }
+});
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
