@@ -900,8 +900,11 @@ footer {
   }
 
   .hero-image img {
-    min-width: 185.5px;
+    min-width: 250px;
     padding: 0;
+  }
+  .hero-image {
+    min-width: 52%;
   }
 
   .btn,
