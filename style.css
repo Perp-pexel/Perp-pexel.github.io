@@ -900,7 +900,7 @@ footer {
   }
 
   .hero-image img {
-    max-width: 100%;
+    min-width: 180px;
     padding: 0;
   }
 
