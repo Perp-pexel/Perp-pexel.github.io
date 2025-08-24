@@ -721,6 +721,14 @@ input, textarea, select {
   -moz-appearance: none;  */
 }
 
+@media (min-width: 768px) {
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+
 textarea {
   resize: vertical; 
   min-height: 100px; 
