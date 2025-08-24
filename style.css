@@ -706,7 +706,7 @@ form {
   padding: 20px;
 }
 
-input, textarea, select {
+input, textarea {
   width: 100%;
   padding: 12px;
   font-size: 1rem;
@@ -721,20 +721,13 @@ input, textarea, select {
   -moz-appearance: none;  */
 }
 
-@media (min-width: 768px) {
-  select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-}
 
 textarea {
   resize: vertical; 
   min-height: 100px; 
 }
 
-select:invalid {
+/* select:invalid {
   color: #888;  
 }
 
@@ -745,7 +738,7 @@ select option {
 
 select option[disabled] {
   display: none;
-}
+} */
 
 button {
   background-color: #1a237e;
