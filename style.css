@@ -706,11 +706,37 @@ form {
   padding: 20px;
 }
 
-input, textarea {
+input, textarea, select {
+  width: 100%;
   padding: 12px;
   font-size: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
+  font-family: monospace, sans-serif;
+  line-height: 1.4;      
+  box-sizing: border-box;
+  /* padding-right: 10px;  */
+    /* appearance: none;     
+  -webkit-appearance: none;
+  -moz-appearance: none;  */
+}
+
+textarea {
+  resize: vertical; 
+  min-height: 100px; 
+}
+
+select:invalid {
+  color: #888;  
+}
+
+select option {
+  color: #000;
+  font-style: normal;
+}
+
+select option[disabled] {
+  display: none;
 }
 
 button {
@@ -761,16 +787,21 @@ footer {
     line-height: 1.2rem;
     font-style: italic;
     padding: 0.02px;
+    color: #1a237e;
 }
 
 .foot {
+  width: 20%;
   position: relative;
+  left: 50%;
+  margin-top: 10%;
+  transform: translateX(-50%);
   bottom: 0;
   background-color: #1a237e;
   color: white;
   text-align: center;
-  font-size: large;
-  padding: 5px;
+  font-size: 12px;
+  padding: 0.5px;
 }
 
 

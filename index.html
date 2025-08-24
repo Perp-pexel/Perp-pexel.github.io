@@ -273,12 +273,22 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+<form action="https://formspree.io/f/mnnbaalj" method="POST" id="contactForm">
+  <input type="text" name="name" placeholder="Name" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <input type="tel" name="phone" placeholder="Contact" required />
+  <select name="subject" required>
+    <option value="" disabled selected>Subject</option>
+    <option value="general">General Inquiry</option>
+    <option value="support">Support</option>
+    <option value="feedback">Feedback</option>
+    <option value="partnership">Partnership</option>
+  </select>
+  <textarea name="message" placeholder="Message" required></textarea>
+  
+  <button type="submit">Send</button>
+</form>
+
 
 <div class="contact-icons">
   <a href="tel:0246462281" target="_blank" title="Phone">
@@ -312,11 +322,13 @@
         <p>NOTHING IS IMPOSSIBLE</p>
         <P>JUST BELIEVE</P>
     </div>
+
+    
+    <div class="foot">
+      <p>&copy; 2024. All rights reserved.</p>
 </footer>
 
- <div class="foot">
-    <p>&copy; 2025 Perpetual Amankrah</p>
-  </div>
+
 
   
 

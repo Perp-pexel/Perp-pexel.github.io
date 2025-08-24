@@ -1,7 +1,26 @@
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  alert('Thank you! Your message has been received.');
-});
+//Contact Form
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { Accept: "application/json" }
+      });
+
+      if (response.ok) {
+        alert('✅ Thank you! Your message has been received.');
+        form.reset();
+      } else {
+        alert('❌ Oops! Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      alert('⚠️ Network error. Please check your connection.');
+    }
+  });
 
 // hamburger
 const hamburger = document.getElementById("hamburger");
